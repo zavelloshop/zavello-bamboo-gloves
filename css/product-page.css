@@ -139,7 +139,6 @@
     margin-top: 60px;
     border-top: 1px solid rgba(44, 53, 39, 0.1);
     padding-top: 40px;
-    text-align: center !important;
 }
 
 .faq-header {
@@ -147,7 +146,7 @@
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 30px;
-    text-align: center !important;
+    text-align: center;
 }
 
 .faq-item {
@@ -156,7 +155,6 @@
     padding: 20px;
     border-radius: 12px;
     border: 1px solid rgba(44, 53, 39, 0.05);
-    text-align: center !important;
 }
 
 .faq-question {
@@ -164,8 +162,6 @@
     margin-bottom: 12px;
     color: var(--color-white);
     font-size: 16px;
-    text-align: center !important;
-    justify-content: center !important;
     width: 100%;
 }
 
@@ -173,7 +169,6 @@
     color: var(--color-silver);
     font-size: 15px;
     line-height: 1.6;
-    text-align: center !important;
 }
 
 @media (max-width: 900px) {
