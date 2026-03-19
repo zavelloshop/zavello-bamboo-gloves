@@ -274,13 +274,42 @@ body {
 }
 
 @media (max-width: 768px) {
-    .carousel-content-split { background: rgba(250, 250, 250, 0.75); }
-    .carousel-headline { font-size: 50px; }
-    .hero-top-right { top: 100px; right: 20px; text-align: right; }
-    .hero-bottom-left { position: relative; bottom: auto; left: auto; margin: 40px 20px 20px; text-align: right; align-items: flex-end; }
-    .carousel-tagline { border-left: none; padding-left: 0; border-right: 3px solid var(--color-neon-green); padding-right: 16px; }
+    .hero-carousel { min-height: 600px; height: 100vh; }
+    .carousel-content-split { 
+        background: rgba(250, 250, 250, 0.85); 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        padding: 100px 30px 40px; 
+    }
+    .carousel-headline { font-size: 55px; line-height: 1.1; margin-bottom: 10px; }
+    
+    .hero-top-right { 
+        position: relative; 
+        top: auto; right: auto; 
+        width: 100%; 
+        text-align: right; 
+        margin-bottom: 15px; 
+    }
+    
+    .hero-bottom-left { 
+        position: relative; 
+        bottom: auto; left: auto; 
+        width: 100%; 
+        margin: 0; 
+        text-align: right; 
+        align-items: flex-start; /* RTL pushes start to the right */
+    }
+    
+    .carousel-tagline { 
+        border-left: none; padding-left: 0; 
+        border-right: 3px solid var(--color-neon-green); padding-right: 16px; 
+        margin-bottom: 15px; font-size: 20px;
+    }
+    .carousel-description { font-size: 16px; margin-bottom: 25px; }
+    
     .carousel-nav { display: none; }
-    .carousel-price { justify-content: flex-end; }
-    .carousel-cta { justify-content: flex-end; }
-    .carousel-pagination { bottom: 20px; right: 50%; transform: translateX(50%); }
+    .carousel-cta { width: 100%; justify-content: flex-start; }
+    .btn-primary { width: 100%; } /* Full width button on mobile */
+    .carousel-pagination { bottom: 30px; left: 50%; transform: translateX(-50%); right: auto; } /* Center dots properly */
 }
