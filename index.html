@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavello | כפפות מבמבוק טרפויטיות</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/hero-glitch.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script type="module" src="https://cdn.shopify.com/storefront/web-components.js"></script>
+    <script type="module" src="js/carousel.js"></script>
+    
+    <style>
+        /* Smooth Scroll */
+        html.lenis { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto; }
+        
+        /* Nav Overlay */
+        .nav-container {
+            position: absolute; top: 0; width: 100%; z-index: 100;
+            padding: 30px 60px; display: flex; justify-content: space-between;
+            align-items: center; mix-blend-mode: normal;
+        }
+        .logo {
+            font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 500;
+            color: var(--color-white); text-decoration: none; letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-link {
+            font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500;
+            color: var(--color-white); text-decoration: none;
+        }
+        
+        /* Video Sections */
+        .full-video-section {
+            position: relative; height: 60vh; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            background: var(--color-charcoal);
+        }
+        .overlay-content {
+            position: relative; z-index: 2; text-align: center;
+        }
+        .stat-grid {
+            display: flex; gap: 80px; margin-top: 40px; justify-content: center; flex-wrap: wrap;
+        }
+        .stat-item h3 {
+            font-family: 'Outfit', sans-serif; font-size: 70px; margin: 0; font-weight: 300;
+            color: var(--color-neon-green); line-height: 1;
+        }
+        .stat-item p {
+            font-family: 'Space Mono', monospace; font-size: 14px; color: var(--color-silver);
+            text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container">
+        <a href="index.html" class="logo">ZAVELLO</a>
+        <div class="nav-links">
+            <a href="product.html" class="nav-link">קנו כפפות</a>
+            <a href="blog.html" class="nav-link">המדע מאחורי ההקלה</a>
+            <a href="mission.html" class="nav-link">המשימה שלנו</a>
+        </div>
+        <button style="background:transparent; border:1px solid rgba(44,53,39,0.2); border-radius:30px; padding:10px 24px; color:var(--color-white); font-family:'Inter', sans-serif; font-weight:500; cursor:pointer;" onclick="document.getElementById('main-cart').showModal()">עגלה (0)</button>
+    </nav>
+    <shopify-cart id="main-cart"></shopify-cart>
+
+    <script>
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+    </script>
+
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            
+            <div class="carousel-slide active">
+                <video class="carousel-video" autoplay loop muted playsinline src="videos/Flow_202603190131.mp4"></video>
+                <div class="carousel-content-split">
+                    <div class="hero-top-right">
+                        <div class="carousel-label">זאבלו במבוק</div>
+                        <h1 class="carousel-headline">פעימת<br>ריפוי</h1>
+                    </div>
+                    <div class="hero-bottom-left">
+                        <p class="carousel-tagline" style="color:var(--color-cyber-purple)">דחיסה מרגיעה</p>
+                        <p class="carousel-description">תמיכה ממוקדת ומכוילת מדעית העוטפת בעדינות את המפרקים שלכם להקלה טבעית מנוקשות ונפיחות.</p>
+                        <div class="carousel-cta">
+                            <button class="btn-primary" onclick="window.location.href='product.html'">קנו להקלה מיידית</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-slide">
+                <video class="carousel-video" loop muted playsinline src="videos/Flow_202603190138.mp4"></video>
+                <div class="carousel-content-split">
+                    <div class="hero-top-right">
+                        <div class="carousel-label">זאבלו במבוק</div>
+                        <h1 class="carousel-headline">אריג<br>נושם</h1>
+                    </div>
+                    <div class="hero-bottom-left">
+                        <p class="carousel-tagline" style="color:var(--color-electric-blue)">זרימת אוויר רציפה</p>
+                        <p class="carousel-description">בד במבוק טיפולי סרוג. נקבוביות מיקרו מבטיחות שהידיים שלכם יישארו יבשות ונוחות לחלוטין לאורך כל היום.</p>
+                        <div class="carousel-cta">
+                            <button class="btn-primary" onclick="window.location.href='product.html'">קנו להקלה מיידית</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <video class="carousel-video" loop muted playsinline src="videos/Hand_opening_and_202603190140.mp4"></video>
+                <div class="carousel-content-split">
+                    <div class="hero-top-right">
+                        <div class="carousel-label">זאבלו במבוק</div>
+                        <h1 class="carousel-headline">גמישות<br>מוחלטת</h1>
+                    </div>
+                    <div class="hero-bottom-left">
+                        <p class="carousel-tagline" style="color:var(--color-neon-green)">מתיחה לארבעה כיוונים</p>
+                        <p class="carousel-description">חופש תנועה מלא וללא הפרעה. חזרו לפעילויות האהובות עליכם עם תנועתיות ששוחזרה לחלוטין.</p>
+                        <div class="carousel-cta">
+                            <button class="btn-primary" onclick="window.location.href='product.html'">קנו להקלה מיידית</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-nav carousel-nav--prev" onclick="prevSlide()">&rarr;</button>
+        <button class="carousel-nav carousel-nav--next" onclick="nextSlide()">&larr;</button>
+        <div class="carousel-pagination">
+            <button class="pagination-dot active" onclick="goToSlide(0)"></button>
+            <button class="pagination-dot" onclick="goToSlide(1)"></button>
+            <button class="pagination-dot" onclick="goToSlide(2)"></button>
+        </div>
+    </section>
+
+    <section class="gentle-copy-section" style="background:var(--color-black); padding: 120px 5%; text-align:center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family:'Outfit', sans-serif; font-size:42px; font-weight:300; color:var(--color-white); margin-bottom:24px;">תנו לידיים שלכם את החיבוק שמגיע להן</h2>
+            <p style="font-family:'Inter', sans-serif; font-size:20px; line-height:1.7; color:var(--color-silver); font-weight:400;">
+                כפפות הבמבוק של זאבלו פותחו מתוך הבנה עמוקה של הכאב היומיומי שלכם. הן עוטפות את המפרקים בדחיסה עדינה ונעימה שמפחיתה נפיחות ומשפרת את זרימת הדם. כך תוכלו לחזור לפעילויות האהובות עליכם – מהכנת כוס תה בבוקר ועד לעבודה מול המחשב – בחופשיות מלאה, ללא נוקשות וללא מגבלות.
+            </p>
+            <button class="btn-primary" style="margin-top: 30px;" onclick="window.location.href='product.html'">גלו את ההקלה עכשיו</button>
+        </div>
+    </section>
+
+    <section class="full-video-section">
+        <div class="overlay-content">
+            <h2 class="carousel-headline" style="font-size: 50px;">סטנדרטים טיפוליים</h2>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <h3>360<span style="font-size:30px">°</span></h3>
+                    <p>דחיסת מפרקים</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100<span style="font-size:30px">%</span></h3>
+                    <p>תמצית במבוק טבעית</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24<span style="font-size:30px">/7</span></h3>
+                    <p>נוחות ביום ובלילה</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-headline">מצאו את ההקלה שלכם</h2>
+                    <div class="section-label" style="margin-top:20px;">// כפפות לחץ טיפוליות</div>
+                </div>
+            </div>
+            
+            <div class="products-grid">
+                <shopify-store store-domain="mfndsw-bu.myshopify.com" public-access-token="c4270b8d41558008b5eeaf8e054380b2" country="US">
+                    <shopify-list-context type="product" query="products" first="3">
+                        <template>
+                            <div class="product-card">
+                                <a shopify-attr--href="'product.html?handle=' + product.handle" style="text-decoration:none;">
+                                    <shopify-media query="product.selectedOrFirstAvailableVariant.image" width="600" height="600" class="product-card__image"></shopify-media>
+                                    <div class="product-card__content">
+                                        <div class="product-card__title"><shopify-data query="product.title"></shopify-data></div>
+                                        <div class="product-card__price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </template>
+                    </shopify-list-context>
+                </shopify-store>
+            </div>
+        </div>
+    </section>
+
+    <footer class="big-footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <h4>המוצרים שלנו</h4>
+                <a href="product.html">כפפות דחיסה זאבלו (מקוריות)</a>
+                <a href="product.html">מארזי חיסכון (2+ זוגות)</a>
+                <a href="blog.html">מאמרים מקצועיים והדרכות</a>
+            </div>
+            <div class="footer-col">
+                <h4>שירות ותמיכה</h4>
+                <a href="#">מדיניות משלוח חינם</a>
+                <a href="#">מדיניות החזרים כספיים</a>
+                <a href="#">תנאים והגבלות</a>
+            </div>
+            <div class="footer-col">
+                <h4>העולם של זאבלו</h4>
+                <a href="mission.html">המשימה והסיפור שלנו</a>
+                <a href="blog.html">המדע מאחורי ההקלה</a>
+                <a href="#">ביקורות ולקוחות</a>
+            </div>
+        </div>
+        <div class="footer-brand-title">ZAVELLO</div>
+    </footer>
+
+</body>
+</html>

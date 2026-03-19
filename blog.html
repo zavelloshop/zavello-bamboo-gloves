@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavello | המדע מאחורי ההקלה</title>
+    <link rel="stylesheet" href="css/hero-glitch.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+       body { background-color: var(--color-black); color: var(--color-white); margin: 0; font-family: 'Inter', sans-serif; }
+       .nav-container { padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(44,53,39,0.05); }
+       .logo { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 500; color: var(--color-white); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+       .nav-links { display: flex; gap: 40px; }
+       .nav-link { color: var(--color-white); text-decoration: none; font-size: 16px; font-weight: 500; opacity: 0.8; }
+       .nav-link:hover { opacity: 1; color: var(--color-neon-green); }
+       .journal-header { padding: 100px 5% 60px; border-bottom: 1px solid rgba(44,53,39,0.05); margin-bottom: 60px; text-align: center; }
+       .journal-title { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 80px; margin: 0; color: var(--color-white); }
+       .journal-subtitle { font-family: 'Inter', sans-serif; font-size: 18px; color: var(--color-silver); margin-top: 10px; }
+       .journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; padding: 0 5% 120px; max-width: 1600px; margin: 0 auto; }
+       .blog-card { text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 24px; cursor: pointer; transition: transform 0.3s; border: 1px solid rgba(44,53,39,0.05); padding: 20px; border-radius: 12px; background: #FFF; }
+       .blog-card:hover { transform: translateY(-10px); border-color: rgba(106,142,97,0.3); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+       .blog-card__image { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: var(--color-charcoal); border-radius: 6px; }
+       .blog-card__category { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-neon-green); font-family: 'Space Mono', monospace; font-weight: 700; }
+       .blog-card__title { font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 28px; margin: 0; color: var(--color-white); }
+       .blog-card__link { margin-top: auto; font-size: 14px; font-weight: 500; text-decoration: none; color: var(--color-silver); transition: color 0.2s;}
+       .blog-card:hover .blog-card__link { color: var(--color-neon-green); }
+   </style>
+</head>
+<body>
+   <nav class="nav-container">
+       <a href="index.html" class="logo">ZAVELLO</a>
+       <div class="nav-links">
+           <a href="product.html" class="nav-link">קנו כפפות</a>
+           <a href="blog.html" class="nav-link">המדע מאחורי ההקלה</a>
+           <a href="mission.html" class="nav-link">המשימה שלנו</a>
+       </div>
+   </nav>
+   <header class="journal-header">
+       <h1 class="journal-title">המדע מאחורי ההקלה</h1>
+       <p class="journal-subtitle">תובנות מבוססות ראיות על תרפיית דחיסה וטקסטיל במבוק.</p>
+   </header>
+   <div class="journal-grid">
+       <a href="article-compression.html" class="blog-card">
+           <img src="videos/Regenerate_variations_one_202603190027.jpeg" class="blog-card__image" alt="Compression study">
+           <div class="blog-card__content">
+               <span class="blog-card__category">מחקר רפואי</span>
+               <h2 class="blog-card__title">כיצד דחיסת 360° מפחיתה נוקשות בוקר</h2>
+               <span class="blog-card__link">קראו את המחקר &larr;</span>
+           </div>
+       </a>
+       <a href="article-bamboo.html" class="blog-card">
+           <img src="videos/Gloves_imitating_bamboo_202603190057.jpeg" class="blog-card__image" alt="Bamboo Fabric">
+           <div class="blog-card__content">
+               <span class="blog-card__category">מדע חומרים</span>
+               <h2 class="blog-card__title">כוח ויסות החום של סיבי במבוק טבעיים</h2>
+               <span class="blog-card__link">גלו מדוע &larr;</span>
+           </div>
+       </a>
+       <a href="article-relief.html" class="blog-card">
+           <img src="videos/hero_morning_relief.jpeg" class="blog-card__image" alt="Morning Relief">
+           <div class="blog-card__content">
+               <span class="blog-card__category">מדריך טיפולי</span>
+               <h2 class="blog-card__title">מיקסום ההקלה הלילית בעזרת כפפות חצי אצבע</h2>
+               <span class="blog-card__link">קראו את המדריך &larr;</span>
+           </div>
+       </a>
+   </div>
+</body>
+</html>
