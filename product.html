@@ -24,6 +24,16 @@
         .logo { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 500; color: var(--color-white); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
         .nav-links { display: flex; gap: 40px; }
         .nav-link { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; color: var(--color-white); text-decoration: none; }
+        
+        /* Mobile Bug Fixes */
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+            .nav-container { padding: 20px; }
+            .nav-links { display: none; }
+            .logo { font-size: 24px; }
+        }
+        
+        details summary::-webkit-details-marker { display:none; }
     </style>
 </head>
 <body>
@@ -297,20 +307,44 @@
                         </div>
                     </div>
 
-                    <div class="faqs">
-                        <h2 class="faq-header">תשובות לשאלות נפוצות</h2>
-                        <div class="faq-item">
-                            <div class="faq-question">מה קורה אם המידה שלי לא מדויקת?</div>
-                            <div class="faq-answer">זה קורה! פשוט מחזירים את הכפפות, ואנחנו נדאג לשלוח זוג חדש במידה המדויקת במהירות וללא שאלות.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">האם ניתן לישון עם הכפפות ולהתעורר איתן?</div>
-                            <div class="faq-answer">בוודאי. ניתן ללבוש את הכפפות בכל רגע נתון ביום. הן מספקות תמיכה מעולה ומפחיתות לחלוטין את נוקשות הבוקר.</div>
-                        </div>
-                        <div class="faq-item">
-                            <div class="faq-question">איך אני יודע איזה גודל להזמין?</div>
-                            <div class="faq-answer">מדידה פשוטה של היקף פרק כף היד שלכם תאפשר לכם להשוות לטבלת המידות בסמוך לכפתור הרכישה שלנו!</div>
-                        </div>
+                    <div class="faqs" style="text-align:center; max-width: 800px; margin: 40px auto; direction:rtl;">
+                        <h2 class="faq-header" style="font-family:'Outfit', sans-serif; font-size: 32px; margin-bottom: 30px; font-weight: 400; color:var(--color-white);">תשובות לשאלות נפוצות</h2>
+                        
+                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family:'Inter', sans-serif; text-align: center;">
+                                מה כוללת אחריות החזר של 30 יום? <span style="font-size:14px; opacity: 0.5;">▼</span>
+                            </summary>
+                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: center;">
+                                אנחנו כל כך בטוחים שתחוו הקלה משמעותית, שאנחנו מאפשרים לכם לנסות את הכפפות למשך 30 יום. אם אינכם מרוצים מכל סיבה שהיא, שלחו אותן חזרה וקבלו החזר כספי מלא וללא שאלות.
+                            </div>
+                        </details>
+                        
+                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family:'Inter', sans-serif; text-align: center;">
+                                אפשר ללבוש את הכפפות במהלך היום? <span style="font-size:14px; opacity: 0.5;">▼</span>
+                            </summary>
+                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: center;">
+                                בהחלט. הבמבוק הנושם שלנו ועיצוב האצבעות הפתוחות מאפשרים לכם לעבוד מהבית, להקליד, ולנהוג בנוחות מרבית, למשך שעות ארוכות ובלי להרגיש את הכפפה.
+                            </div>
+                        </details>
+                        
+                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family:'Inter', sans-serif; text-align: center;">
+                                מה קורה אם הזמנתי מידה לא נכונה? <span style="font-size:14px; opacity: 0.5;">▼</span>
+                            </summary>
+                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: center;">
+                                זה קורה! פשוט שלחו אלינו הודעה דרך העמוד הרשמי, ואנחנו נדאג להוציא זוג חדש במידה המדויקת במהירות ובחיוך.
+                            </div>
+                        </details>
+
+                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: center; align-items: center; gap: 10px; font-family:'Inter', sans-serif; text-align: center;">
+                                אפשר לבחור יותר מזוג אחד? <span style="font-size:14px; opacity: 0.5;">▼</span>
+                            </summary>
+                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: center;">
+                                כן! רוב הלקוחות בוחרים במארזי החיסכון שלנו (זוג בשימוש בזמן שהשני בכביסה). תוכלו לבחור מידות שונות לכל זוג ישירות מעל כפתור 'הוספה לעגלה'.
+                            </div>
+                        </details>
                     </div>
                 </section>
                 

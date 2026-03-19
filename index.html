@@ -58,6 +58,21 @@
             font-family: 'Space Mono', monospace; font-size: 14px; color: var(--color-silver);
             text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px;
         }
+
+        /* Mobile Fixes */
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+            .nav-container { padding: 20px; }
+            .nav-links { display: none; } /* Stacks menu, prevents horizontal bleed */
+            .logo { font-size: 24px; }
+            .nav-container button { padding: 8px 16px; font-size: 14px; }
+            
+            .full-video-section { height: auto; padding: 60px 20px; }
+            .stat-grid { gap: 40px; flex-direction: column; }
+            .stat-item h3 { font-size: 50px; }
+            .gentle-copy-section { padding: 80px 20px !important; }
+            .gentle-copy-section h2 { font-size: 32px !important; }
+        }
     </style>
 </head>
 <body>
@@ -184,7 +199,7 @@
             </div>
             
             <div class="products-grid">
-                <shopify-store store-domain="mfndsw-bu.myshopify.com" public-access-token="c4270b8d41558008b5eeaf8e054380b2" country="US">
+                <shopify-store store-domain="mfndsw-bu.myshopify.com" public-access-token="c4270b8d41558008b5eeaf8e054380b2" country="US" language="EN">
                     <shopify-list-context type="product" query="products" first="3">
                         <template>
                             <div class="product-card">
