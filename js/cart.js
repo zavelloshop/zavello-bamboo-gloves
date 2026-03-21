@@ -88,7 +88,13 @@ function renderCustomCart() {
     
     totalHTML.innerText = "₪" + sum.toFixed(2);
     if (headBtn) {
-        headBtn.innerText = `עגלה (${localCartState.length})`;
+        const badge = headBtn.querySelector('.cart-badge');
+        if (badge) {
+            badge.innerText = localCartState.length;
+            badge.style.display = localCartState.length > 0 ? 'flex' : 'none';
+        } else {
+            headBtn.innerText = `עגלה (${localCartState.length})`;
+        }
     }
 }
 
