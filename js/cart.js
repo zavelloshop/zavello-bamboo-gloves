@@ -1,7 +1,7 @@
 // --- Global Mobile Menu Injector ---
 document.head.insertAdjacentHTML('beforeend', `
 <style>
-.mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; color: #fff; cursor: pointer; padding: 0; }
+.mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; color: var(--color-neon-green, #6A8E61); cursor: pointer; padding: 0; }
 @media (max-width: 768px) {
     .mobile-menu-btn { display: block; }
     .nav-container { flex-wrap: nowrap !important; justify-content: space-between !important; padding: 15px 20px !important; position: relative !important; }
