@@ -8,9 +8,11 @@ document.head.insertAdjacentHTML('beforeend', `
     .logo { position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; }
     .nav-links { 
         display: none !important; position: absolute !important; top: 100% !important; right: 0; width: 100%; 
-        background: #191B18 !important; flex-direction: column !important; align-items: center; 
-        padding: 20px 0 !important; gap: 20px !important; z-index: 999; border-top: 1px solid rgba(255,255,255,0.1); 
+        background: #FFFFFF !important; flex-direction: column !important; align-items: center; 
+        padding: 20px 0 !important; gap: 20px !important; z-index: 999; border-top: none !important; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
     }
+    .nav-links a { color: #2C3527 !important; font-weight: 600 !important; font-size: 16px !important; }
     .nav-links.active { display: flex !important; }
 }
 </style>
