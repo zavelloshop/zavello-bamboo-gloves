@@ -121,11 +121,20 @@
         /* Mobile Bug Fixes */
         @media (max-width: 768px) {
             .nav-container {
-                padding: 20px;
+                padding: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
 
             .nav-links {
-                display: none;
+                display: flex;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 5px;
+                gap: 15px;
+                font-size: 14px;
             }
 
             .logo {
