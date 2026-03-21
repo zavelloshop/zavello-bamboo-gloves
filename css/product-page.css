@@ -99,14 +99,10 @@
     color: var(--color-white);
 }
 
+/* Only show ::before tick on li elements that are positioned (have padding-right for the absolute marker) */
 .benefits-list li::before {
-    content: '✓';
-    position: absolute;
-    right: 0;
-    top: 2px;
-    color: var(--color-neon-green);
-    font-weight: bold;
-    font-size: 18px;
+    content: '';
+    display: none;
 }
 
 .benefits-list li strong {

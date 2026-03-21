@@ -1,0 +1,76 @@
+let localCartState = JSON.parse(localStorage.getItem('zavelloCart')) || [];
+
+function saveCart() {
+    localStorage.setItem('zavelloCart', JSON.stringify(localCartState));
+}
+
+function pushToMockCart() {
+    const activeOpt = document.querySelector('.upsell-option.active');
+    if (!activeOpt) return;
+    const packType = activeOpt.querySelector('.upsell-title').innerText;
+    const rawPrice = activeOpt.querySelector('.upsell-price').innerText;
+    const drops = activeOpt.querySelectorAll('select.size-select');
+    let pickedSizes = [];
+    drops.forEach(d => pickedSizes.push(d.value));
+
+    const newItem = {
+        title: "כפפות דחיסה Zavello",
+        bundle: packType,
+        priceStr: rawPrice,
+        sizesArr: pickedSizes.join(' <br> '),
+        imgURL: "videos/Gloves_imitating_bamboo_202603190057.jpeg"
+    };
+
+    localCartState.push(newItem);
+    saveCart();
+    renderCustomCart();
+    const cartEl = document.getElementById('custom-cart') || document.getElementById('main-cart');
+    if (cartEl) cartEl.showModal();
+}
+
+function renderCustomCart() {
+    const box = document.getElementById('cart-items');
+    const headBtn = document.getElementById('head-cart-btn');
+    const totalHTML = document.getElementById('cart-total');
+    
+    if (!box || !totalHTML) return;
+
+    box.innerHTML = '';
+    let sum = 0;
+    
+    if (localCartState.length === 0) {
+        box.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">העגלה שלך ריקה</p>';
+    } else {
+        localCartState.forEach((item, i) => {
+            const parsedNum = parseFloat(item.priceStr.replace(/[^\d.]/g, ''));
+            sum += parsedNum;
+            box.innerHTML += `
+                <div style="display:flex; gap:20px; border-bottom:1px solid #F8F8F8; padding-bottom:20px;">
+                    <img src="${item.imgURL}" style="width:90px; height:90px; border-radius:12px; object-fit:cover;">
+                    <div style="flex:1;">
+                        <div style="font-weight:700; font-size:16px; color:#000;">${item.title}</div>
+                        <div style="color:#666; font-size:14px; margin-top:4px;">${item.bundle}</div>
+                        <div style="color:#000000; font-size:13px; font-weight:600; margin-top:8px; line-height:1.6; padding:8px; background:#F2F7F2; border-radius:6px; border:1px solid rgba(106,142,97,0.2);">${item.sizesArr}</div>
+                        <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-weight:700; font-size:16px; color:#000;">${item.priceStr}</span>
+                            <span style="font-size:13px; color:#E02424; cursor:pointer; text-decoration:underline;" onclick="removeFromMock(${i})">הסר</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    totalHTML.innerText = "₪" + sum.toFixed(2);
+    if (headBtn) {
+        headBtn.innerText = `עגלה (${localCartState.length})`;
+    }
+}
+
+function removeFromMock(i) {
+    localCartState.splice(i, 1);
+    saveCart();
+    renderCustomCart();
+}
+
+document.addEventListener('DOMContentLoaded', renderCustomCart);

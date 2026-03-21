@@ -33,7 +33,7 @@
         .nav-container {
             position: absolute; top: 0; width: 100%; z-index: 100;
             padding: 30px 60px; display: flex; justify-content: space-between;
-            align-items: center; mix-blend-mode: normal;
+            align-items: center; mix-blend-mode: normal; direction: rtl;
         }
         .logo {
             font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 500;
@@ -94,13 +94,39 @@
     <nav class="nav-container">
         <a href="index.html" class="logo">ZAVELLO</a>
         <div class="nav-links">
+            <a href="index.html" class="nav-link" style="color:var(--color-neon-green)">דף הבית</a>
             <a href="product.html" class="nav-link">קנו כפפות</a>
             <a href="blog.html" class="nav-link">המדע מאחורי ההקלה</a>
             <a href="mission.html" class="nav-link">המשימה שלנו</a>
         </div>
-        <button style="background:transparent; border:1px solid rgba(44,53,39,0.2); border-radius:30px; padding:10px 24px; color:var(--color-white); font-family:'Inter', sans-serif; font-weight:500; cursor:pointer;" onclick="document.getElementById('main-cart').showModal()">עגלה (0)</button>
+        <button style="background:transparent; border:1px solid rgba(44,53,39,0.2); border-radius:30px; padding:10px 24px; color:var(--color-white); font-family:'Inter', sans-serif; font-weight:500; cursor:pointer;" onclick="document.getElementById('custom-cart').showModal()">עגלה (0)</button>
     </nav>
-    <shopify-cart id="main-cart"></shopify-cart>
+    <dialog id="custom-cart"
+        style="width: 450px; height: 100vh; margin: 0 0 0 auto; border: none; padding: 40px; background: #FFF; box-shadow: -20px 0 50px rgba(0,0,0,0.1); font-family: 'Inter', sans-serif;">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #EBEBEB; padding-bottom:20px; margin-bottom:30px;">
+            <h2 style="margin:0; font-family:'Outfit',sans-serif; font-size: 28px;">העגלה שלך</h2>
+            <button onclick="document.getElementById('custom-cart').close()"
+                style="background:none; border:none; font-size:32px; color:#888; cursor:pointer;">&times;</button>
+        </div>
+
+        <div id="cart-items" style="display:flex; flex-direction:column; gap:24px; flex:1; min-height:55vh;">
+            <p style="text-align:center; color:#888; margin-top:50px;">העגלה שלך ריקה</p>
+        </div>
+
+        <div style="border-top:1px solid #EBEBEB; padding-top:30px; margin-top:30px;">
+            <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:22px; margin-bottom:24px;">
+                <span>סך הכל לתשלום:</span>
+                <span id="cart-total" style="color:var(--color-neon-green);">₪0.00</span>
+            </div>
+            <button class="btn-primary" style="width:100%; padding:24px; border-radius:12px; font-size:18px; font-weight:600; cursor:pointer;" onclick="window.location.href='product.html'">המשך לקנייה</button>
+        </div>
+    </dialog>
+    <style>
+        #custom-cart::backdrop {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        }
+    </style>
 
     <script>
         const lenis = new Lenis();
@@ -200,37 +226,11 @@
                     <p>נוחות ביום ובלילה</p>
                 </div>
             </div>
+            <button class="btn-primary" style="margin-top: 50px; padding: 16px 40px; font-size: 18px;" onclick="window.location.href='product.html'">לרכישת הכפפות</button>
         </div>
     </section>
 
-    <section id="products" class="products-section">
-        <div class="container">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-headline">מצאו את ההקלה שלכם</h2>
-                    <div class="section-label" style="margin-top:20px;">// כפפות לחץ טיפוליות</div>
-                </div>
-            </div>
-            
-            <div class="products-grid">
-                <shopify-store store-domain="mfndsw-bu.myshopify.com" public-access-token="c4270b8d41558008b5eeaf8e054380b2" country="US" language="EN">
-                    <shopify-list-context type="product" query="products" first="3">
-                        <template>
-                            <div class="product-card">
-                                <a shopify-attr--href="'product.html?handle=' + product.handle" style="text-decoration:none;">
-                                    <shopify-media query="product.selectedOrFirstAvailableVariant.image" width="600" height="600" class="product-card__image"></shopify-media>
-                                    <div class="product-card__content">
-                                        <div class="product-card__title"><shopify-data query="product.title"></shopify-data></div>
-                                        <div class="product-card__price"><shopify-money query="product.selectedOrFirstAvailableVariant.price"></shopify-money></div>
-                                    </div>
-                                </a>
-                            </div>
-                        </template>
-                    </shopify-list-context>
-                </shopify-store>
-            </div>
-        </div>
-    </section>
+
 
     <footer class="big-footer">
         <div class="footer-top">
@@ -250,11 +250,13 @@
                 <h4>העולם של זאבלו</h4>
                 <a href="mission.html">המשימה והסיפור שלנו</a>
                 <a href="blog.html">המדע מאחורי ההקלה</a>
-                <a href="#">ביקורות ולקוחות</a>
+                <a href="product.html#customer-reviews-section">ביקורות ולקוחות</a>
             </div>
         </div>
         <div class="footer-brand-title">ZAVELLO</div>
     </footer>
 
+    <script src="js/cart.js"></script>
+    <script src="https://negishot.co.il/cdn/widget.php?code=NGS_C9272F79C710"></script>
 </body>
 </html>

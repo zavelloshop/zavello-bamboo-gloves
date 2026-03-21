@@ -1,82 +1,194 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zavello | כפפות מבמבוק המשנות חיים</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/hero-glitch.css">
     <link rel="stylesheet" href="css/product-page.css">
     <link rel="stylesheet" href="css/footer.css">
-    
+
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script type="module" src="https://cdn.shopify.com/storefront/web-components.js"></script>
-    
+
     <style>
-        * { box-sizing: border-box; }
-        html, body { 
-            overflow-x: hidden; 
-            width: 100%; 
-            margin: 0; 
-            padding: 0; 
+        html, body, img {
+            -webkit-user-select: none !important;
+            user-select: none !important;
+            -webkit-touch-callout: none !important;
         }
-        
+
+        .lifestyle-banner {
+            width: 100%;
+            height: auto;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 16px;
+        }
+        .dual-banner-row {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+            justify-content: center;
+        }
+        .dual-banner-row .lifestyle-banner {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .dual-banner-row { flex-direction: column; align-items: center; gap: 30px; }
+            .dual-banner-row .lifestyle-banner { width: 90%; max-width: none; }
+            .lifestyle-banner { width: 90%; max-width: none; }
+        }
+
+        img {
+            -webkit-user-drag: none !important;
+            user-drag: none !important;
+            pointer-events: none !important;
+        }
+
+        a, button, input, textarea, select, [role="button"] {
+            pointer-events: auto !important;
+        }
+
+        a img, button img {
+            pointer-events: none !important;
+        }
+    </style>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         .nav-container {
-            position: absolute; top: 0; width: 100%; z-index: 100;
-            padding: 30px 60px; display: flex; justify-content: space-between;
-            align-items: center; border-bottom: 1px solid rgba(44,53,39,0.05); background: var(--color-black);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(44, 53, 39, 0.05);
+            background: var(--color-black);
+            direction: rtl;
         }
-        .logo { font-family: 'Outfit', sans-serif; font-size: 32px; font-weight: 500; color: var(--color-white); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-link { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 500; color: var(--color-white); text-decoration: none; }
-        
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--color-white);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color-white);
+            text-decoration: none;
+        }
+
         /* Mobile Bug Fixes */
         @media (max-width: 768px) {
-            .nav-container { padding: 20px; }
-            .nav-links { display: none; }
-            .logo { font-size: 24px; }
-            #head-cart-btn { padding: 8px 16px; font-size: 14px; }
+            .nav-container {
+                padding: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            #head-cart-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
         }
-        
-        details summary::-webkit-details-marker { display:none; }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
+
 <body style="overflow-x: hidden; width: 100%;">
 
     <nav class="nav-container">
         <a href="index.html" class="logo">ZAVELLO</a>
         <div class="nav-links">
+            <a href="index.html" class="nav-link">דף הבית</a>
             <a href="product.html" class="nav-link" style="color:var(--color-neon-green)">קנו כפפות</a>
             <a href="blog.html" class="nav-link">המדע מאחורי ההקלה</a>
             <a href="mission.html" class="nav-link">המשימה שלנו</a>
         </div>
-        <button style="background:transparent; border:1px solid rgba(44,53,39,0.2); border-radius:30px; padding:10px 24px; color:var(--color-white); font-family:'Inter', sans-serif; font-weight:500; cursor:pointer;" id="head-cart-btn" onclick="document.getElementById('custom-cart').showModal()">עגלה (0)</button>
+        <button
+            style="background:transparent; border:1px solid rgba(44,53,39,0.2); border-radius:30px; padding:10px 24px; color:var(--color-white); font-family:'Inter', sans-serif; font-weight:500; cursor:pointer;"
+            id="head-cart-btn" onclick="document.getElementById('custom-cart').showModal()">עגלה (0)</button>
     </nav>
-    
+
     <!-- Custom Diagnostic Cart Drawer -->
-    <dialog id="custom-cart" style="width: 450px; height: 100vh; margin: 0 0 0 auto; border: none; padding: 40px; background: #FFF; box-shadow: -20px 0 50px rgba(0,0,0,0.1); font-family: 'Inter', sans-serif;">
-        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #EBEBEB; padding-bottom:20px; margin-bottom:30px;">
+    <dialog id="custom-cart"
+        style="width: 450px; height: 100vh; margin: 0 0 0 auto; border: none; padding: 40px; background: #FFF; box-shadow: -20px 0 50px rgba(0,0,0,0.1); font-family: 'Inter', sans-serif;">
+        <div
+            style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #EBEBEB; padding-bottom:20px; margin-bottom:30px;">
             <h2 style="margin:0; font-family:'Outfit',sans-serif; font-size: 28px;">העגלה שלך</h2>
-            <button onclick="document.getElementById('custom-cart').close()" style="background:none; border:none; font-size:32px; color:#888; cursor:pointer;">&times;</button>
+            <button onclick="document.getElementById('custom-cart').close()"
+                style="background:none; border:none; font-size:32px; color:#888; cursor:pointer;">&times;</button>
         </div>
-        
+
         <div id="cart-items" style="display:flex; flex-direction:column; gap:24px; flex:1; min-height:55vh;">
             <p style="text-align:center; color:#888; margin-top:50px;">העגלה שלך ריקה</p>
         </div>
-        
+
         <div style="border-top:1px solid #EBEBEB; padding-top:30px; margin-top:30px;">
-            <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:22px; margin-bottom:24px;">
+            <div
+                style="display:flex; justify-content:space-between; font-weight:bold; font-size:22px; margin-bottom:24px;">
                 <span>סך הכל לתשלום:</span>
                 <span id="cart-total" style="color:var(--color-neon-green);">₪0.00</span>
             </div>
-            <button class="btn-primary" style="width:100%; padding:24px; border-radius:12px; font-size:18px; font-weight:600; cursor:pointer;">המשך לתשלום מאובטח</button>
+            <button class="btn-primary"
+                style="width:100%; padding:24px; border-radius:12px; font-size:18px; font-weight:600; cursor:pointer;">המשך
+                לתשלום מאובטח</button>
         </div>
     </dialog>
     <style>
-        #custom-cart::backdrop { background: rgba(0,0,0,0.3); backdrop-filter: blur(4px); }
+        #custom-cart::backdrop {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        }
     </style>
 
     <script>
@@ -85,278 +197,729 @@
         requestAnimationFrame(raf);
     </script>
 
-    <!-- Removed Shopify Context Wrapper to Guarantee the HTML Renders -->
     <main class="product-layout">
-                
-                <section class="product-visual">
-                    <!-- High-Converting Static Landing Page Images -->
-                    <div class="gallery-main">
-                        <img src="videos/Gloves_imitating_bamboo_202603190057.jpeg" alt="כפפות טרפויטיות מבמבוק זאבלו">
-                    </div>
-                    <div class="gallery-thumbs">
-                        <img src="videos/Regenerate_variations_one_202603190027.jpeg" alt="גמישות ואחיזה בזאבלו">
-                        <img src="videos/hero_morning_relief.jpeg" alt="הקלת נוקשות בוקר זאבלו">
-                    </div>
-                </section>
+        <section class="product-visual">
+            <div class="gallery-main">
+                <img src="videos/Gloves_imitating_bamboo_202603190057.jpeg" alt="כפפות טרפויטיות מבמבוק זאבלו">
+            </div>
+            <div class="gallery-thumbs">
+                <img src="videos/Regenerate_variations_one_202603190027.jpeg" alt="גמישות ואחיזה בזאבלו">
+                <img src="videos/hero_morning_relief.jpeg" alt="הקלת נוקשות בוקר זאבלו">
+            </div>
+        </section>
 
-                <section class="product-info">
-                    <h1 class="product-title">כפפות דחיסה Zavello מבמבוק</h1>
-                    
-                    <!-- Social Proof / Reviews -->
-                    <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; background:#F2F7F2; padding:8px 12px; border-radius:8px; width:fit-content; border:1px solid rgba(106,142,97,0.1);">
-                        <span style="color:#FFA41C; font-size:16px;">★★★★★</span>
-                        <span style="font-family:'Inter', sans-serif; font-size:14px; font-weight:600; color:var(--color-white);">4.9/5 (4,218 ביקורות מישראל)</span>
-                    </div>
+        <section class="product-info">
+            <h1 class="product-title">כפפות דחיסה Zavello מבמבוק</h1>
 
-                    <!-- Price & Savings -->
-                    <div class="product-price" style="display:flex; align-items:center; flex-wrap:wrap; margin-bottom:20px;">
-                        <span style="font-family:'Inter', sans-serif; font-size:36px; font-weight:600; color:var(--color-neon-green);">₪149.00</span>
-                        <span style="font-size:20px; text-decoration:line-through; color:#888888; margin-right:12px; font-weight:400;">₪219.00</span>
-                        <span style="background-color:#ffebeb; color:#e02424; padding:4px 8px; border-radius:4px; font-size:13px; font-weight:700; margin-right:12px;">חיסכון של ₪70.00</span>
-                    </div>
+            <!-- Social Proof -->
+            <a href="#customer-reviews-section"
+                style="text-decoration:none; display:flex; align-items:center; gap:8px; margin-bottom:12px; background:#F2F7F2; padding:8px 12px; border-radius:8px; width:fit-content; border:1px solid rgba(106,142,97,0.1); cursor:pointer;">
+                <span style="color:#FFA41C; font-size:16px;">★★★★★</span>
+                <span style="font-family:'Inter', sans-serif; font-size:14px; font-weight:600; color:#2C3527;">4.6/5
+                    (4,218 ביקורות מישראל)</span>
+            </a>
 
-                    <!-- Time Restraint / Scarcity -->
-                    <div style="background-color:#FFF8F8; border:1px solid #FFD8D8; border-radius:8px; padding:12px; margin-bottom:20px; display:flex; align-items:center; gap:10px;">
-                        <span style="color:#E02424; font-size:18px;">🔥</span>
-                        <span style="color:#E02424; font-weight:700; font-size:15px;">המבצע מסתיים היום בחצות!</span>
-                        <span style="background:#E02424; color:#FFF; font-family:'Space Mono', monospace; padding:2px 8px; border-radius:4px; font-weight:bold; margin-right:auto; direction:ltr;">04:29:59</span>
-                    </div>
-                    
-                    <p class="product-tagline">הקלה יומיומית בכאבי פרקים, בלי תרופות ובלי התערבויות כירורגיות.</p>
-                    <p class="product-desc">חיבוק רך ועדין שעובד בשבילכם לאורך כל היום והלילה. כפפות זאבלו מפחיתות משמעותית את נוקשות הבוקר והכאב הטורדני כדי להחזיר לעצמכם את העצמאות הפשוטה.</p>
-                    
-                    <ul class="benefits-list">
-                        <li><strong>דחיסת 360 מעלות מדויקת</strong> - תומכת במפרקים, מפחיתה עומס, דלקתיות וכאב לאורך היום והלילה.</li>
-                        <li><strong>ויסות חום ותחושה נעימה</strong> - סיבי במבוק נעימים ונושמים ב-100% המספקים תחושה יבשה לאורך שעות שימוש.</li>
-                        <li><strong>אצבעות חופשיות</strong> - מקלידים, שותים ומכינים אוכל בלי שום הסחות דעת, פשוט חופש תנועה.</li>
-                    </ul>
+            <!-- Price & Savings -->
+            <div class="product-price" style="display:flex; align-items:center; flex-wrap:wrap; margin-bottom:20px;">
+                <span
+                    style="font-family:'Inter', sans-serif; font-size:36px; font-weight:600; color:var(--color-neon-green);">₪149.00</span>
+                <span
+                    style="font-size:20px; text-decoration:line-through; color:#888888; margin-right:12px; font-weight:400;">₪219.00</span>
+                <span
+                    style="background-color:#ffebeb; color:#e02424; padding:4px 8px; border-radius:4px; font-size:13px; font-weight:700; margin-right:12px;">חיסכון
+                    של ₪70.00</span>
+            </div>
 
-                    <div class="product-actions" style="margin-top:10px; background:#FFFFFF; padding:24px; border-radius:16px; border:1px solid rgba(44,53,39,0.08);">
-                        
-                        <!-- Custom CSS for Accordion -->
-                        <style>
-                            .upsell-widget { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
-                            .upsell-option { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; background: #EBF5EA; cursor: pointer; position: relative; transition: all 0.2s; }
-                            .upsell-option.active { background: #FFFFFF; border: 2px solid #000; }
-                            .upsell-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; }
-                            .upsell-right { display: flex; align-items: center; gap: 14px; }
-                            
-                            .upsell-radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #000; display: flex; align-items: center; justify-content: center; background: #FFF; }
-                            .upsell-option.active .upsell-radio::after { content: ''; width: 12px; height: 12px; background: #000; border-radius: 50%; }
-                            
-                            .upsell-title { font-size: 17px; font-weight: 600; color: #000; }
-                            .upsell-price-box { text-align: left; position: relative; display: flex; flex-direction: column; align-items: flex-end; }
-                            .upsell-price { font-size: 18px; font-weight: 700; color: #000; }
-                            .upsell-old-price { font-size: 15px; color: #888; text-decoration: line-through; }
-                            
-                            .popular-tag { position: absolute; top: -14px; left: 24px; background: #000; color: #FFF; font-size: 13px; font-weight: 500; padding: 4px 14px; border-radius: 20px; z-index: 10; font-family: 'Inter', sans-serif; letter-spacing: 0.5px; }
-                            
-                            .upsell-dropdowns { display: none; padding: 0 20px 20px; flex-direction: column; gap: 10px; }
-                            .upsell-option.active .upsell-dropdowns { display: flex; }
-                            .size-select { width: 100%; padding: 12px 14px; border: 1px solid #D1D1D1; border-radius: 8px; font-size: 15px; background: #FFF; font-family: 'Inter', sans-serif; color: #555; outline: none; appearance: none;
-                                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-                                background-repeat: no-repeat; background-position: left 14px center; background-size: 16px; }
-                        </style>
+            <!-- Scarcity Timer -->
+            <div
+                style="background-color:#FFF8F8; border:1px solid #FFD8D8; border-radius:8px; padding:12px; margin-bottom:20px; display:flex; align-items:center; gap:10px;">
+                <span style="color:#E02424; font-size:18px;">🔥</span>
+                <span style="color:#E02424; font-weight:700; font-size:15px;">המבצע לזמן מוגבל!</span>
+                <span id="scarcity-countdown"
+                    style="background:#E02424; color:#FFF; font-family:'Space Mono', monospace; padding:2px 8px; border-radius:4px; font-weight:bold; margin-right:auto; direction:ltr;">17:11:00</span>
+            </div>
 
-                        <!-- Dynamic Upsell Accordion -->
-                        <div class="upsell-widget" id="upsellWidget">
-                            
-                            <div class="upsell-option active" onclick="selectUpsell(1)">
-                                <div class="upsell-header">
-                                    <div class="upsell-right">
-                                        <div class="upsell-radio"></div>
-                                        <span class="upsell-title">קנו 1</span>
-                                    </div>
-                                    <div class="upsell-price-box">
-                                        <span class="upsell-price">149.00 ₪</span>
-                                    </div>
-                                </div>
-                                <div class="upsell-dropdowns">
-                                    <select class="size-select"><option>Small (S)</option><option>Medium (M)</option><option>Large (L)</option></select>
-                                </div>
+            <!-- Bundle Widget -->
+            <div class="product-actions"
+                style="margin-top:10px; background:#FFFFFF; padding:24px; border-radius:16px; border:1px solid rgba(44,53,39,0.08); margin-bottom:24px;">
+                <style>
+                    .upsell-widget {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                        margin-bottom: 24px;
+                        font-family: 'Inter', sans-serif;
+                    }
+
+                    .upsell-option {
+                        border: 1px solid rgba(0, 0, 0, 0.08);
+                        border-radius: 12px;
+                        background: #EBF5EA;
+                        cursor: pointer;
+                        position: relative;
+                        transition: all 0.2s;
+                    }
+
+                    .upsell-option.active {
+                        background: #FFFFFF;
+                        border: 2px solid #000;
+                    }
+
+                    .upsell-header {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 18px 20px;
+                    }
+
+                    .upsell-right {
+                        display: flex;
+                        align-items: center;
+                        gap: 14px;
+                    }
+
+                    .upsell-radio {
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        border: 2px solid #000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: #FFF;
+                    }
+
+                    .upsell-option.active .upsell-radio::after {
+                        content: '';
+                        width: 12px;
+                        height: 12px;
+                        background: #000;
+                        border-radius: 50%;
+                    }
+
+                    .upsell-title {
+                        font-size: 17px;
+                        font-weight: 600;
+                        color: #000;
+                    }
+
+                    .upsell-price-box {
+                        text-align: left;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                    }
+
+                    .upsell-price {
+                        font-size: 18px;
+                        font-weight: 700;
+                        color: #000;
+                    }
+
+                    .upsell-old-price {
+                        font-size: 15px;
+                        color: #888;
+                        text-decoration: line-through;
+                    }
+
+                    .popular-tag {
+                        position: absolute;
+                        top: -14px;
+                        left: 24px;
+                        background: #000;
+                        color: #FFF;
+                        font-size: 13px;
+                        font-weight: 500;
+                        padding: 4px 14px;
+                        border-radius: 20px;
+                        z-index: 10;
+                        font-family: 'Inter', sans-serif;
+                        letter-spacing: 0.5px;
+                    }
+
+                    .upsell-dropdowns {
+                        display: none;
+                        padding: 0 20px 20px;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .upsell-option.active .upsell-dropdowns {
+                        display: flex;
+                    }
+
+                    .size-select {
+                        width: 100%;
+                        padding: 12px 14px;
+                        border: 1px solid #D1D1D1;
+                        border-radius: 8px;
+                        font-size: 15px;
+                        background: #FFF;
+                        font-family: 'Inter', sans-serif;
+                        color: #555;
+                        outline: none;
+                        appearance: none;
+                        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                        background-repeat: no-repeat;
+                        background-position: left 14px center;
+                        background-size: 16px;
+                    }
+                </style>
+
+                <div class="upsell-widget" id="upsellWidget">
+                    <div class="upsell-option active" onclick="selectUpsell(1)">
+                        <div class="upsell-header">
+                            <div class="upsell-right">
+                                <div class="upsell-radio"></div>
+                                <span class="upsell-title">קנו 1</span>
                             </div>
-                            
-                            <div class="upsell-option" onclick="selectUpsell(2)" style="margin-top: 10px;">
-                                <div class="popular-tag">Most Popular</div>
-                                <div class="upsell-header">
-                                    <div class="upsell-right">
-                                        <div class="upsell-radio"></div>
-                                        <span class="upsell-title">קנו 2 (אחד עליכם, אחד בכביסה)</span>
-                                    </div>
-                                    <div class="upsell-price-box">
-                                        <span class="upsell-price">199.00 ₪</span>
-                                        <span class="upsell-old-price">298.00 ₪</span>
-                                    </div>
-                                </div>
-                                <div class="upsell-dropdowns">
-                                    <select class="size-select"><option>זוג 1: Small (S)</option><option>זוג 1: Medium (M)</option><option>זוג 1: Large (L)</option></select>
-                                    <select class="size-select"><option>זוג 2: Small (S)</option><option>זוג 2: Medium (M)</option><option>זוג 2: Large (L)</option></select>
-                                </div>
-                            </div>
-
-                            <div class="upsell-option" onclick="selectUpsell(3)">
-                                <div class="upsell-header">
-                                    <div class="upsell-right">
-                                        <div class="upsell-radio"></div>
-                                        <span class="upsell-title">קנו 3</span>
-                                    </div>
-                                    <div class="upsell-price-box">
-                                        <span class="upsell-price">329.00 ₪</span>
-                                        <span class="upsell-old-price">447.00 ₪</span>
-                                    </div>
-                                </div>
-                                <div class="upsell-dropdowns">
-                                    <select class="size-select"><option>זוג 1: Small (S)</option><option>זוג 1: Medium (M)</option><option>זוג 1: Large (L)</option></select>
-                                    <select class="size-select"><option>זוג 2: Small (S)</option><option>זוג 2: Medium (M)</option><option>זוג 2: Large (L)</option></select>
-                                    <select class="size-select"><option>זוג 3: Small (S)</option><option>זוג 3: Medium (M)</option><option>זוג 3: Large (L)</option></select>
-                                </div>
-                            </div>
-                            
+                            <div class="upsell-price-box"><span class="upsell-price">149.00 ₪</span></div>
                         </div>
+                        <div class="upsell-dropdowns">
+                            <select class="size-select">
+                                <option>Small (S)</option>
+                                <option>Medium (M)</option>
+                                <option>Large (L)</option>
+                            </select>
+                        </div>
+                    </div>
 
-                        <script>
-                            function selectUpsell(num) {
-                                const options = document.querySelectorAll('.upsell-option');
-                                options.forEach((opt, idx) => {
-                                    if (idx + 1 === num) {
-                                        opt.classList.add('active');
-                                    } else {
-                                        opt.classList.remove('active');
-                                    }
-                                });
-                            }
-
-                            // Dynamic Local Cart State
-                            let localCartState = [];
-
-                            function pushToMockCart() {
-                                const activeOpt = document.querySelector('.upsell-option.active');
-                                const packType = activeOpt.querySelector('.upsell-title').innerText;
-                                const rawPrice = activeOpt.querySelector('.upsell-price').innerText;
-                                
-                                // Harvest exact sizes from visible dropdowns
-                                const drops = activeOpt.querySelectorAll('select.size-select');
-                                let pickedSizes = [];
-                                drops.forEach(d => pickedSizes.push(d.value));
-                                
-                                const newItem = {
-                                    title: "כפפות דחיסה Zavello",
-                                    bundle: packType,
-                                    priceStr: rawPrice,
-                                    sizesArr: pickedSizes.join(' <br> '),
-                                    imgURL: "videos/Gloves_imitating_bamboo_202603190057.jpeg"
-                                };
-                                
-                                localCartState.push(newItem);
-                                renderCustomCart();
-                                document.getElementById('custom-cart').showModal();
-                            }
-
-                            function renderCustomCart() {
-                                const box = document.getElementById('cart-items');
-                                const headBtn = document.getElementById('head-cart-btn');
-                                const totalHTML = document.getElementById('cart-total');
-                                
-                                box.innerHTML = '';
-                                let sum = 0;
-                                
-                                if(localCartState.length === 0) {
-                                    box.innerHTML = '<p style="text-align:center; color:#888; margin-top:50px;">העגלה שלך ריקה</p>';
-                                }
-                                
-                                localCartState.forEach((item, i) => {
-                                    const parsedNum = parseFloat(item.priceStr.replace(/[^\d.]/g, ''));
-                                    sum += parsedNum;
-                                    
-                                    box.innerHTML += `
-                                        <div style="display:flex; gap:20px; border-bottom:1px solid #F8F8F8; padding-bottom:20px;">
-                                            <img src="${item.imgURL}" style="width:90px; height:90px; border-radius:12px; object-fit:cover;">
-                                            <div style="flex:1;">
-                                                <div style="font-weight:700; font-size:16px; color:#000;">${item.title}</div>
-                                                <div style="color:#666; font-size:14px; margin-top:4px;">${item.bundle}</div>
-                                                <div style="color:#000000; font-size:13px; font-weight:600; margin-top:8px; line-height:1.6; padding:8px; background:#F2F7F2; border-radius:6px; border:1px solid rgba(106,142,97,0.2);">${item.sizesArr}</div>
-                                                <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
-                                                    <span style="font-weight:700; font-size:16px; color:#000;">${item.priceStr}</span>
-                                                    <span style="font-size:13px; color:#E02424; cursor:pointer; text-decoration:underline;" onclick="removeFromMock(${i})">הסר</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    `;
-                                });
-                                
-                                totalHTML.innerText = "₪" + sum.toFixed(2);
-                                headBtn.innerText = `עגלה (${localCartState.length})`;
-                            }
-
-                            function removeFromMock(i) {
-                                localCartState.splice(i, 1);
-                                renderCustomCart();
-                            }
-                        </script>
-
-                        <button onclick="pushToMockCart()" class="btn-primary" style="width:100%; border-radius:12px; padding:20px; font-size:18px; font-weight:600; background:var(--color-black); color:var(--color-white); border:none; margin-top:0px; cursor:pointer; transition:transform 0.2s;">
-                            🛒 הוספה מאובטחת לעגלה
-                        </button>
-
-                        <!-- Trust Badges -->
-                        <div style="display:flex; justify-content:space-between; margin-top:24px; padding-top:20px; border-top:1px solid rgba(44,53,39,0.05); text-align:center;">
-                            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
-                                <span style="font-size:24px;">🛡️</span>
-                                <span style="font-size:12px; font-weight:600; color:var(--color-silver);">תשלום מאובטח</span>
+                    <div class="upsell-option" onclick="selectUpsell(2)" style="margin-top: 10px;">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="upsell-header">
+                            <div class="upsell-right">
+                                <div class="upsell-radio"></div>
+                                <span class="upsell-title">קנו 2 (אחד עליכם, אחד בכביסה)</span>
                             </div>
-                            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
-                                <span style="font-size:24px;">🚚</span>
-                                <span style="font-size:12px; font-weight:600; color:var(--color-silver);">משלוח מהיר</span>
+                            <div class="upsell-price-box">
+                                <span class="upsell-price">199.00 ₪</span>
+                                <span class="upsell-old-price">298.00 ₪</span>
                             </div>
-                            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
-                                <span style="font-size:24px;">🔄</span>
-                                <span style="font-size:12px; font-weight:600; color:var(--color-silver);">30 ימי ניסיון</span>
-                            </div>
-                        </div> <!-- End Trust Badges -->
-                    </div> <!-- End product-actions -->
-                </div> <!-- End product-info -->
-            </div> <!-- End product-layout -->
+                        </div>
+                        <div class="upsell-dropdowns">
+                            <select class="size-select">
+                                <option>זוג 1: Small (S)</option>
+                                <option>זוג 1: Medium (M)</option>
+                                <option>זוג 1: Large (L)</option>
+                            </select>
+                            <select class="size-select">
+                                <option>זוג 2: Small (S)</option>
+                                <option>זוג 2: Medium (M)</option>
+                                <option>זוג 2: Large (L)</option>
+                            </select>
+                        </div>
+                    </div>
 
-            <div class="faqs" style="max-width: 1200px; margin: 80px auto; direction:rtl; padding: 0 40px;">
-                <h2 class="faq-header" style="text-align: center; font-family:'Outfit', sans-serif; font-size: 32px; margin-bottom: 30px; font-weight: 400; color:var(--color-white);">תשובות לשאלות נפוצות</h2>
-                        
-                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
-                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
-                                <span>מה כוללת אחריות החזר של 30 יום?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
-                            </summary>
-                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
-                                אנחנו כל כך בטוחים שתחוו הקלה משמעותית, שאנחנו מאפשרים לכם לנסות את הכפפות למשך 30 יום. אם אינכם מרוצים מכל סיבה שהיא, שלחו אותן חזרה וקבלו החזר כספי מלא וללא שאלות.
+                    <div class="upsell-option" onclick="selectUpsell(3)">
+                        <div class="upsell-header">
+                            <div class="upsell-right">
+                                <div class="upsell-radio"></div>
+                                <span class="upsell-title">קנו 3</span>
                             </div>
-                        </details>
-                        
-                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
-                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
-                                <span>אפשר ללבוש את הכפפות במהלך היום?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
-                            </summary>
-                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
-                                בהחלט. הבמבוק הנושם שלנו ועיצוב האצבעות הפתוחות מאפשרים לכם לעבוד מהבית, להקליד, ולנהוג בנוחות מרבית, למשך שעות ארוכות ובלי להרגיש את הכפפה.
+                            <div class="upsell-price-box">
+                                <span class="upsell-price">329.00 ₪</span>
+                                <span class="upsell-old-price">447.00 ₪</span>
                             </div>
-                        </details>
-                        
-                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
-                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
-                                <span>מה קורה אם הזמנתי מידה לא נכונה?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
-                            </summary>
-                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
-                                זה קורה! פשוט שלחו אלינו הודעה דרך העמוד הרשמי, ואנחנו נדאג להוציא זוג חדש במידה המדויקת במהירות ובחיוך.
-                            </div>
-                        </details>
+                        </div>
+                        <div class="upsell-dropdowns">
+                            <select class="size-select">
+                                <option>זוג 1: Small (S)</option>
+                                <option>זוג 1: Medium (M)</option>
+                                <option>זוג 1: Large (L)</option>
+                            </select>
+                            <select class="size-select">
+                                <option>זוג 2: Small (S)</option>
+                                <option>זוג 2: Medium (M)</option>
+                                <option>זוג 2: Large (L)</option>
+                            </select>
+                            <select class="size-select">
+                                <option>זוג 3: Small (S)</option>
+                                <option>זוג 3: Medium (M)</option>
+                                <option>זוג 3: Large (L)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-                        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
-                            <summary class="faq-question" style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
-                                <span>אפשר לבחור יותר מזוג אחד?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
-                            </summary>
-                            <div class="faq-answer" style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
-                                כן! רוב הלקוחות בוחרים במארזי החיסכון שלנו (זוג בשימוש בזמן שהשני בכביסה). תוכלו לבחור מידות שונות לכל זוג ישירות מעל כפתור 'הוספה לעגלה'.
-                            </div>
-                        </details>
-                    </div> <!-- End faqs -->
-            </main>
+                <button onclick="pushToMockCart()" class="btn-primary"
+                    style="width:100%; border-radius:12px; padding:20px; font-size:18px; font-weight:600; background:var(--color-black); color:var(--color-white); border:none; cursor:pointer; transition:transform 0.2s;">
+                    🛒 הוספה מאובטחת לעגלה
+                </button>
+
+                <!-- Trust Badges -->
+                <div
+                    style="display:flex; justify-content:space-between; margin-top:24px; padding-top:20px; border-top:1px solid rgba(44,53,39,0.05); text-align:center;">
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
+                        <span style="font-size:24px;">🛡️</span>
+                        <span style="font-size:12px; font-weight:600; color:var(--color-silver);">תשלום מאובטח</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
+                        <span style="font-size:24px;">🚚</span>
+                        <span style="font-size:12px; font-weight:600; color:var(--color-silver);">משלוח מהיר</span>
+                    </div>
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
+                        <span style="font-size:24px;">🔄</span>
+                        <span style="font-size:12px; font-weight:600; color:var(--color-silver);">30 ימי ניסיון</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <img src="videos/banner-1.jpg" class="lifestyle-banner" alt="Zavello Gloves Lifestyle" style="margin-bottom: 30px;">
+
+    <!-- Full-width centered copy section, above reviews -->
+    <section style="max-width: 700px; margin: 60px auto 0; padding: 0 40px; text-align: center; direction: rtl; font-family: 'Inter', sans-serif;">
+        <h2 style="font-family:'Outfit', sans-serif; font-size: 28px; font-weight: 600; color: #000; margin-bottom: 12px;">הקלה יומיומית בכאבי פרקים</h2>
+        <p style="color: #555; font-size: 16px; line-height: 1.8; margin-bottom: 28px;">חיבוק רך ועדין שעובד בשבילכם לאורך כל היום והלילה. כפפות זאבלו מפחיתות משמעותית את נוקשות הבוקר והכאב הטורדני כדי להחזיר לעצמכם את העצמאות הפשוטה.</p>
+        <ul style="list-style: none; padding: 0; margin: 0; display: inline-flex; flex-direction: column; gap: 14px; text-align: right;">
+            <li style="display: flex; align-items: center; gap: 12px; color: #000; font-size: 16px;">
+                <span style="color: #6A8E61; font-weight: bold; font-size: 18px;">✓</span>
+                <span><strong>דחיסת 360° מדויקת</strong> — תומכת במפרקים ומפחיתה עומס לאורך היום</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px; color: #000; font-size: 16px;">
+                <span style="color: #6A8E61; font-weight: bold; font-size: 18px;">✓</span>
+                <span><strong>סיבי במבוק נושמים</strong> — תחושה יבשה ונעימה לאורך שעות שימוש</span>
+            </li>
+            <li style="display: flex; align-items: center; gap: 12px; color: #000; font-size: 16px;">
+                <span style="color: #6A8E61; font-weight: bold; font-size: 18px;">✓</span>
+                <span><strong>אצבעות חופשיות</strong> — מקלידים, שותים ומכינים אוכל ללא הגבלה</span>
+            </li>
+        </ul>
+    </section>
+
+    <div class="dual-banner-row" style="margin-top: 60px; margin-bottom: 60px;">
+        <img src="videos/banner-2.jpg" class="lifestyle-banner" alt="Zavello Gloves Daily Life">
+        <img src="videos/banner-3.jpg" class="lifestyle-banner" alt="Zavello Gloves Daily Life">
+    </div>
+
+    <script>
+        function selectUpsell(num) {
+            const options = document.querySelectorAll('.upsell-option');
+            options.forEach((opt, idx) => {
+                if (idx + 1 === num) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
+            });
+        }
+
+
+
+        /* Dynamic Countdown Timer */
+        let totalSeconds = (17 * 3600) + (11 * 60);
+        function updateScarcityTimer() {
+            if (totalSeconds <= 0) return;
+            totalSeconds--;
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+            const formatted =
+                String(h).padStart(2, '0') + ":" +
+                String(m).padStart(2, '0') + ":" +
+                String(s).padStart(2, '0');
+            document.getElementById('scarcity-countdown').innerText = formatted;
+        }
+        setInterval(updateScarcityTimer, 1000);
+
+        /* ===== True Infinite Reviews Carousel ===== */
+        (function() {
+            const TOTAL_REAL = 10;      // number of actual review cards
+            let currentReal  = 0;       // 0-based index among real cards
+            let autoPlay;
+
+            window.addEventListener('DOMContentLoaded', function() {
+                const track    = document.getElementById('reviewsTrack');
+                const viewport = document.querySelector('.reviews-viewport');
+                const dotsBox  = document.getElementById('carouselDots');
+                if (!track || !viewport) return;
+
+                const cards    = Array.from(track.querySelectorAll('.review-card'));
+                if (cards.length === 0) return;
+
+                /* --- 1. Figure out how many cards fit in view --- */
+                const gap       = 24;
+                const cardW     = cards[0].offsetWidth + gap;   // card + gap
+                const vpW       = viewport.offsetWidth;
+                const visible   = Math.max(1, Math.round(vpW / cardW));
+                const cloneN    = visible;                      // cards to clone each side
+
+                /* --- 2. Clone cards at BOTH ends for seamless wrap --- */
+                // Append clones of the first N cards to the END
+                for (let i = 0; i < cloneN; i++) {
+                    track.appendChild(cards[i].cloneNode(true));
+                }
+                // Prepend clones of the last N cards to the START
+                for (let i = cards.length - 1; i >= cards.length - cloneN; i--) {
+                    track.insertBefore(cards[i].cloneNode(true), track.firstChild);
+                }
+
+                /* --- 3. Movement helpers --- */
+                function offset(realIdx) {
+                    // The track now has cloneN extra items at the front
+                    return (realIdx + cloneN) * cardW;
+                }
+
+                function jumpNoTransition(realIdx) {
+                    track.style.transition = 'none';
+                    track.style.transform  = 'translateX(-' + offset(realIdx) + 'px)';
+                    // Force reflow so the jump is painted immediately
+                    void track.offsetWidth;
+                }
+
+                function slideTo(realIdx) {
+                    track.style.transition = 'transform 0.6s cubic-bezier(0.4,0,0.2,1)';
+                    track.style.transform  = 'translateX(-' + offset(realIdx) + 'px)';
+                }
+
+                /* --- 4. Dots --- */
+                if (dotsBox) {
+                    for (let i = 0; i < TOTAL_REAL; i++) {
+                        const dot = document.createElement('button');
+                        dot.className = 'carousel-dot';
+                        dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;background:rgba(0,0,0,0.2);cursor:pointer;transition:all 0.3s;padding:0;';
+                        dot.addEventListener('click', function() {
+                            currentReal = i;
+                            slideTo(currentReal);
+                            updateDots();
+                            restartAuto();
+                        });
+                        dotsBox.appendChild(dot);
+                    }
+                }
+
+                function updateDots() {
+                    document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+                        d.style.background = (i === currentReal) ? '#000' : 'rgba(0,0,0,0.2)';
+                        d.style.transform  = (i === currentReal) ? 'scale(1.3)' : 'scale(1)';
+                    });
+                }
+
+                /* --- 5. On transition end, silently jump if we're on a clone --- */
+                track.addEventListener('transitionend', function() {
+                    if (currentReal >= TOTAL_REAL) {
+                        currentReal = 0;
+                        jumpNoTransition(currentReal);
+                        updateDots();
+                    } else if (currentReal < 0) {
+                        currentReal = TOTAL_REAL - 1;
+                        jumpNoTransition(currentReal);
+                        updateDots();
+                    }
+                });
+
+                /* --- 6. Advance one card --- */
+                function next() {
+                    currentReal++;
+                    slideTo(currentReal);
+                    // Dots show modulo — works even when currentReal == TOTAL_REAL momentarily
+                    updateDotsSmooth();
+                }
+
+                function updateDotsSmooth() {
+                    const displayIdx = ((currentReal % TOTAL_REAL) + TOTAL_REAL) % TOTAL_REAL;
+                    document.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+                        d.style.background = (i === displayIdx) ? '#000' : 'rgba(0,0,0,0.2)';
+                        d.style.transform  = (i === displayIdx) ? 'scale(1.3)' : 'scale(1)';
+                    });
+                }
+
+                /* --- 7. Auto-play --- */
+                function startAutoPlay() { return setInterval(next, 4000); }
+                function restartAuto() { clearInterval(autoPlay); autoPlay = startAutoPlay(); }
+
+                /* --- 8. Pause on hover --- */
+                viewport.addEventListener('mouseenter', function() { clearInterval(autoPlay); });
+                viewport.addEventListener('mouseleave', function() { autoPlay = startAutoPlay(); });
+
+                /* --- 9. Init position --- */
+                jumpNoTransition(0);
+                updateDots();
+                autoPlay = startAutoPlay();
+            });
+        })();
+    </script>
+
+    <section id="customer-reviews-section" class="customer-reviews"
+        style="max-width: 1200px; margin: 80px auto 40px; direction:rtl; padding: 0 40px; font-family:'Inter', sans-serif; text-align: center;">
+        <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:40px;">
+            <h2
+                style="font-family:'Outfit', sans-serif; font-size:38px; font-weight:500; margin-bottom:12px; color:#000;">
+                ביקורות לקוחות</h2>
+            <div style="display:flex; align-items:center; gap:12px; font-size:28px;">
+                <span style="color:#FFA41C;">★★★★★</span>
+                <span style="font-weight:600; font-size:22px; color:#000;">4.6/5</span>
+                <span style="font-size:15px; color:#666;">(4,218 ביקורות מישראל)</span>
+            </div>
+        </div>
+
+        <style>
+            .reviews-carousel-container {
+                position: relative;
+                width: 100%;
+                padding: 10px 0;
+            }
+            .reviews-viewport {
+                overflow: hidden;
+                width: 100%;
+            }
+            .reviews-track {
+                display: flex;
+                gap: 24px;
+                transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+                direction: ltr;
+            }
+            .review-card {
+                min-width: 340px;
+                flex: 0 0 340px;
+                background: #FFFFFF;
+                border: 1px solid rgba(44, 53, 39, 0.08);
+                border-radius: 16px;
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+                text-align: right;
+                direction: rtl;
+            }
+            .review-card .review-header {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .review-card .reviewer-name {
+                font-weight: 700;
+                font-size: 16px;
+                color: #000;
+            }
+            .verified-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                background: #E8F5E9;
+                color: #0BA053;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 3px 10px;
+                border-radius: 20px;
+                white-space: nowrap;
+            }
+            .verified-badge::before {
+                content: '✓';
+                font-weight: 700;
+            }
+            .review-card .review-stars {
+                color: #FFA41C;
+                font-size: 14px;
+                letter-spacing: 2px;
+            }
+            .review-card .review-text {
+                color: #444;
+                font-size: 15px;
+                line-height: 1.6;
+            }
+            .review-card .review-img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 12px;
+                border: 1px solid rgba(0,0,0,0.06);
+            }
+            .review-card .review-footer {
+                margin-top: auto;
+                padding-top: 12px;
+                font-size: 13px;
+                color: #888;
+                border-top: 1px solid rgba(0,0,0,0.05);
+            }
+            #carouselDots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 20px;
+            }
+            @media (max-width: 768px) {
+                .review-card { min-width: 280px; flex: 0 0 280px; }
+                .review-card .review-img { height: 140px; }
+            }
+        </style>
+
+        <div class="reviews-carousel-container">
+            <div class="reviews-viewport">
+                <div class="reviews-track" id="reviewsTrack">
+                    <!-- 1. סיגלית ל. -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">סיגלית ל.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">קניתי את הכפפות בגלל כאבים חזקים באצבעות, ולא ציפיתי לשינוי כזה. כבר אחרי כמה ימים הרגשתי פחות נוקשות בבוקר. הן נוחות, לא לוחצות מדי, ואפשר לעבוד איתן רגיל.</div>
+                        <div class="review-footer">מידה: Medium (M)</div>
+                    </div>
+                    <!-- 2. שימרית מ. -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">שימרית מ.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">ניסיתי כמה סוגים בעבר ואלה הכי טובות עד עכשיו. החומר איכותי, לא מתחמם מדי, והכאב בפרקים ירד בצורה מורגשת. לגמרי שוות את המחיר.</div>
+                        <div class="review-footer">מידה: Large (L)</div>
+                    </div>
+                    <!-- 3. שרון כ. -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">שרון כ.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">יש לי דלקת פרקים כבר שנים, ואלה הכפפות הראשונות שבאמת הרגשתי שהן עוזרות. לא פתרון קסם, אבל בהחלט מקל ומאפשר תפקוד יומיומי נוח יותר.</div>
+                        <div class="review-footer">מידה: Medium (M)</div>
+                    </div>
+                    <!-- 4. רמי ק. -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">רמי ק.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">אני משתמש בהן בזמן שינה וזה שינה לי את הבקרים. פחות כאב, פחות קושי להזיז את האצבעות.</div>
+                        <div class="review-footer">מידה: Large (L)</div>
+                    </div>
+                    <!-- 5. סיגל — with image -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">סיגל</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <img class="review-img" src="videos/review-img-1.jpg" alt="לקוחה עם כפפות זאבלו">
+                        <div class="review-text">התקבלו היטב עם ההזמנה המקובצת, ניסיתי את הכפפות, הכל בסדר.</div>
+                        <div class="review-footer">מידה: Small (S)</div>
+                    </div>
+                    <!-- 6. Roni P. — with image -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Roni P.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <img class="review-img" src="videos/review-img-2.jpg" alt="לקוח עם כפפות זאבלו">
+                        <div class="review-text">הגיע בזמן וכצפוי. האיכות והגימור טובים וכך גם המחיר. מומלץ בחום וארכוש שוב בוודאות.</div>
+                        <div class="review-footer">מידה: Medium (M)</div>
+                    </div>
+                    <!-- 7. רונית פ. — with image -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">רונית פ.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <img class="review-img" src="videos/review-img-4.jpg" alt="לקוחה עם כפפות זאבלו">
+                        <div class="review-text">וואוו!! איזה הקלה! ממליצה מאוד</div>
+                        <div class="review-footer">מידה: Small (S)</div>
+                    </div>
+                    <!-- 8. רונן ש. — with image -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">רונן ש.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <img class="review-img" src="videos/review-img-3.jpg" alt="לקוח מנגן בגיטרה עם כפפות זאבלו">
+                        <div class="review-text">עוד לא ניסיתי, אבל אפשר לראות שהבד נושם ונראה איכות טובה אני לא חושב שתהיה בעיה בקיץ</div>
+                        <div class="review-footer">מידה: Medium (M)</div>
+                    </div>
+                    <!-- 9. דנה ק. -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">דנה ק.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">הגיע אליי לפני יומיים, שמתי אותן בלילה ובבוקר וכבר אני מרגישה הקלה הנפיחות שלי ירדה ויותר קל לעשות מטלות עם הידיים, ממליצה בחום</div>
+                        <div class="review-footer">מידה: Small (S)</div>
+                    </div>
+                    <!-- 10. מיקי ר. — with image -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">מיקי ר.</span>
+                            <span class="verified-badge">קנייה מאומתת</span>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                        <img class="review-img" src="videos/review-img-5.jpg" alt="לקוחה עם כפפות זאבלו">
+                        <div class="review-text">נראות באיכות טובה</div>
+                        <div class="review-footer">מידה: Large (L)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="carouselDots"></div>
+    </section>
+
+    <img src="videos/banner-4.jpg" class="lifestyle-banner" alt="Zavello Gloves Outdoors" style="margin-bottom: 20px;">
+
+    <div class="faqs" style="max-width: 1200px; margin: 80px auto; direction:rtl; padding: 0 40px; text-align: center;">
+        <h2 class="faq-header"
+            style="text-align: center; font-family:'Outfit', sans-serif; font-size: 38px; margin-bottom: 30px; font-weight: 500; color:#000;">
+            תשובות לשאלות נפוצות</h2>
+
+        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+            <summary class="faq-question"
+                style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
+                <span>מה כוללת אחריות החזר של 30 יום?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
+            </summary>
+            <div class="faq-answer"
+                style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
+                אנחנו כל כך בטוחים שתחוו הקלה משמעותית, שאנחנו מאפשרים לכם לנסות את הכפפות למשך 30 יום. אם אינכם מרוצים
+                מכל סיבה שהיא, שלחו אותן חזרה וקבלו החזר כספי מלא וללא שאלות.
+            </div>
+        </details>
+
+        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+            <summary class="faq-question"
+                style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
+                <span>אפשר ללבוש את הכפפות במהלך היום?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
+            </summary>
+            <div class="faq-answer"
+                style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
+                בהחלט. הבמבוק הנושם שלנו ועיצוב האצבעות הפתוחות מאפשרים לכם לעבוד מהבית, להקליד, ולנהוג בנוחות מרבית,
+                למשך שעות ארוכות ובלי להרגיש את הכפפה.
+            </div>
+        </details>
+
+        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+            <summary class="faq-question"
+                style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
+                <span>מה קורה אם הזמנתי מידה לא נכונה?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
+            </summary>
+            <div class="faq-answer"
+                style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
+                זה קורה! פשוט שלחו אלינו הודעה דרך העמוד הרשמי, ואנחנו נדאג להוציא זוג חדש במידה המדויקת במהירות ובחיוך.
+            </div>
+        </details>
+
+        <details class="faq-item" style="border-bottom: 1px solid rgba(44,53,39,0.1); padding: 20px 0;">
+            <summary class="faq-question"
+                style="font-size: 18px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-family:'Inter', sans-serif;">
+                <span>אפשר לבחור יותר מזוג אחד?</span> <span style="font-size:14px; opacity: 0.5;">▼</span>
+            </summary>
+            <div class="faq-answer"
+                style="padding-top: 15px; color: var(--color-silver); font-size: 16px; line-height: 1.6; font-family:'Inter', sans-serif; text-align: right;">
+                כן! רוב הלקוחות בוחרים במארזי החיסכון שלנו (זוג בשימוש בזמן שהשני בכביסה). תוכלו לבחור מידות שונות לכל
+                זוג ישירות מעל כפתור 'הוספה לעגלה'.
+            </div>
+        </details>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <button class="btn-primary" style="padding: 16px 40px; font-size: 18px;" onclick="window.scrollTo({top:0, behavior:'smooth'});">לרכישת הכפפות</button>
+        </div>
+    </div>
 
     <footer class="big-footer">
         <div class="footer-top">
@@ -382,5 +945,60 @@
         <div class="footer-brand-title">ZAVELLO</div>
     </footer>
 
+    <script>
+        (function () {
+            function block(e) {
+                e.preventDefault();
+                return false;
+            }
+
+            document.addEventListener('contextmenu', block, { passive: false, capture: true });
+            document.addEventListener('dragstart', block, { passive: false, capture: true });
+            document.addEventListener('selectstart', block, { passive: false, capture: true });
+            document.addEventListener('copy', block, { passive: false, capture: true });
+
+            document.addEventListener('touchstart', function(e) {
+                if (e.target && (e.target.tagName === 'IMG' || e.target.closest('img'))) {
+                    e.preventDefault();
+                    return false;
+                }
+            }, { passive: false, capture: true });
+
+            document.addEventListener('keydown', function(e) {
+                const key = (e.key || '').toLowerCase();
+
+                if (
+                    e.key === 'F12' ||
+                    (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key)) ||
+                    (e.ctrlKey && ['u','s'].includes(key)) ||
+                    (e.metaKey && e.altKey && ['i','j','c'].includes(key)) ||
+                    (e.metaKey && ['u','s'].includes(key))
+                ) {
+                    e.preventDefault();
+                    return false;
+                }
+            }, true);
+
+            function protectImages() {
+                document.querySelectorAll('img').forEach(function(img) {
+                    img.setAttribute('draggable', 'false');
+                    img.setAttribute('oncontextmenu', 'return false');
+                    img.style.webkitUserDrag = 'none';
+                    img.style.userSelect = 'none';
+                    img.style.webkitTouchCallout = 'none';
+                    img.style.pointerEvents = 'none';
+                });
+            }
+
+            protectImages();
+            new MutationObserver(protectImages).observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        })();
+    </script>
+    <script src="js/cart.js"></script>
+    <script src="https://negishot.co.il/cdn/widget.php?code=NGS_C9272F79C710"></script>
 </body>
+
 </html>
