@@ -1,3 +1,26 @@
+// --- Global Mobile Menu Injector ---
+document.head.insertAdjacentHTML('beforeend', `
+<style>
+.mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; color: #fff; cursor: pointer; padding: 0; }
+@media (max-width: 768px) {
+    .mobile-menu-btn { display: block; }
+    .nav-container { flex-wrap: nowrap !important; justify-content: space-between !important; padding: 15px 20px !important; position: relative !important; }
+    .logo { position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; }
+    .nav-links { 
+        display: none !important; position: absolute !important; top: 100% !important; right: 0; width: 100%; 
+        background: #191B18 !important; flex-direction: column !important; align-items: center; 
+        padding: 20px 0 !important; gap: 20px !important; z-index: 999; border-top: 1px solid rgba(255,255,255,0.1); 
+    }
+    .nav-links.active { display: flex !important; }
+}
+</style>
+`);
+
+function toggleMobileMenu() {
+    const nav = document.querySelector('.nav-links');
+    if (nav) nav.classList.toggle('active');
+}
+
 let localCartState = JSON.parse(localStorage.getItem('zavelloCart')) || [];
 
 function saveCart() {
